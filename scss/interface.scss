@@ -1,0 +1,192 @@
+//variables
+$light: #e0e0e0;
+$natural: #a9a9a9;
+$main: #8a2be2;
+$dark: #000000;
+//basics
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: $light;
+  color: $natural;
+  .container {
+    display: flex;
+    margin: auto;
+    width: 800px;
+    flex-direction: column;
+    .header {
+      margin-top: 5%;
+      color: $main;
+      padding: 20px;
+      text-transform: uppercase;
+    }
+  }
+}
+//repetitive
+.neou {
+  padding: 20px;
+  border-radius: 10px;
+  background: #e0e0e0;
+  box-shadow: 12px 12px 25px #cacaca, -12px -12px 25px #f6f6f6;
+}
+.mv {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.center-text {
+  text-align: center;
+  margin: auto;
+}
+.btn-group {
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .btn-main {
+    background: #e0e0e0;
+    box-shadow: 12px 12px 25px #cacaca, -12px -12px 25px #f6f6f6;
+    color: $main;
+    &:hover {
+      transition: 0.5s;
+      border-radius: 10px;
+      background: #e0e0e0;
+      box-shadow: inset 12px 12px 24px #cacaca, inset -12px -12px 24px #f6f6f6;
+    }
+  }
+  .btn-true {
+    color: $main;
+    text-decoration: none;
+    &:hover {
+      color: green;
+      transition: 0.5s;
+    }
+  }
+  .btn-false {
+    color: $main;
+    text-decoration: none;
+    &:hover {
+      color: red;
+      transition: 0.5s;
+    }
+  }
+}
+.opsi {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+.block {
+  display: block;
+}
+form {
+  margin-top: 5%;
+  .input-text {
+    background-color: $light;
+    color: $natural;
+    border: solid 1px $main;
+    padding: 10px;
+    border-radius: 20px;
+    width: 95%;
+  }
+  button {
+    color: $main;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid $main;
+    background-color: $light;
+    &:hover {
+      color: $light;
+      background-color: $main;
+      transition: 0.5s;
+    }
+  }
+}
+//loader
+/*loader*/
+.loader {
+  width: 100%;
+  height: 100vh;
+  background-color: $light;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader.hidden {
+  animation: fadeOut 1s;
+  animation-fill-mode: forwards;
+}
+
+.spinner {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
+
+.spinner::before,
+.spinner::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.spinner::before {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(90deg, $natural 0%, $light 100%);
+  animation: spin 0.5s infinite linear;
+}
+
+.spinner::after {
+  width: 90%;
+  height: 90%;
+  background-color: $light;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/*keyframes*/
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+//breakpoints
+//i'am to lazy to make the breakpoints, if you can make it by your self
